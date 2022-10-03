@@ -48,7 +48,10 @@ export default defineComponent({
   },
   methods: {
     saveNewTask() {
-      this.todoTasks.push({ id: this.todoTasks.length + 1, title: this.newTaskTitle });
+      this.todoTasks.push({
+        id: this.todoTasks.length + this.inProgressTasks.length + this.doneTasks.length + 1,
+        title: this.newTaskTitle
+      });
       this.newTaskTitle = '';
       this.taskCreationModeEnabled = false;
     },
